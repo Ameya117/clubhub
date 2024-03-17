@@ -4,6 +4,7 @@ import About from "@/components/About";
 import PastEvents from "@/components/PastEvents";
 import UpcomingEventsCarousel from "@/components/UpcomingEventsCarousel";
 import Header from "@/components/Header";
+import ClubFlipCards from "@/components/ClubFlipCards";
 export default function Home() {
   return (
     
@@ -12,6 +13,7 @@ export default function Home() {
         <Header />
         <UpcomingEventsCarousel />
         <About />
+        <ClubFlipCards />
         <PastEvents />
       </main>
    
