@@ -57,7 +57,7 @@ const ClubFlipCards = () => {
         <div className="text-5xl tracking-[0.5rem] font-mono  ">Clubs</div>
       </div>
 
-      <div className="gap-y-[2rem] grid grid-cols-3 mt-[2rem]">
+      <div className="gap-y-[2rem] grid md:grid-cols-2 lg:grid-cols-3 mt-[2rem]">
         <motion.div
           variants={fadeInAnimationVariants}
           initial="initial"
