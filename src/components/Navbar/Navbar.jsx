@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { FaBars } from "react-icons/fa";
-import { IoCloseOutline } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useRouter } from "next/navigation";
@@ -26,12 +24,7 @@ const Navbar = (props) => {
     setDropdown(!dropdown);
   };
 
-  let element;
-  if (icon === "bars") {
-    element = <FaBars />;
-  } else {
-    element = <IoCloseOutline />;
-  }
+
   const handleLogout = (e) => {
     e.preventDefault();
     // localStorage.removeItem("token");
@@ -41,25 +34,12 @@ const Navbar = (props) => {
       router.push("/");
     }, 1000);
   };
-  const handleNavbar = () => {
-    let ul = document.querySelector("ul");
-    icon === "close"
-      ? (ul.classList.add("left-0"), ul.classList.remove("-left-[100%]"))
-      : (ul.classList.remove("left-0"), ul.classList.add("-left-[100%]"));
-  };
-  const handleOnClickLink = () => {
-    let ul = document.querySelector("ul");
-    icon === "close"
-      ? (ul.classList.remove("left-0"),
-        ul.classList.add("-left-[100%]"),
-        setIcon("bars"))
-      : (ul.classList.add("left-0"), ul.classList.remove("-left-[100%]"));
-  };
+ 
 
   return (
     <nav className={`sticky top-0 bg-white z-[10]`}>
       {/* <Toaster richColors position="top-right" duration={2000} /> */}
-      <div className={`h-16 shadow-md flex flex-row justify-between `}>
+      <div className={`h-16 shadow-md flex flex-row justify-between z-[10]`}>
         <Link
           href="/"
           className="my-auto hover:cursor-pointer ml-4 relative h-12"

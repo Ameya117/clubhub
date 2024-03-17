@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "@/components/Navbar/Navbar";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import {
@@ -22,9 +21,10 @@ const Clubs = () => {
   ];
   return (
     <>
-      <Navbar />
       <div className="my-10">
-        <Marquee pauseOnHover speed={150}>
+        <h1 className="text-2xl mx-10 mt-10 mb-2 font-semibold">Upcoming Events</h1>
+        <hr className="w-[95vw] mx-auto"/>
+        <Marquee pauseOnHover speed={150} className="mt-10">
           <div className="flex flex-row">
             {imgs.map((item) => {
               return (
@@ -38,7 +38,7 @@ const Clubs = () => {
                       <img
                         src={`${item}`}
                         alt={`${item}`}
-                        className="h-48 object-cover"
+                        className="h-[35vh] object-cover"
                       />
                     </DialogTrigger>
                     <DialogContent>
