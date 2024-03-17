@@ -1,5 +1,5 @@
 "use client"
-import React, {  useState } from "react";
+import React, {  useState ,useEffect} from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
@@ -12,11 +12,9 @@ const Login = () => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
 
-//   useEffect(() => {
-//     if (localStorage.getItem("token")) {
-//       router.push("/");
-//     }
-//   }, []);
+  useEffect(() => {
+
+  }, []);
 
   const handleOnSubmit = async (event) => {
 //     event.preventDefault();
@@ -65,7 +63,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-row h-[100vh]">
+    <div className={`${router.pathname ==='/login'?'hidden':'block'} flex flex-row h-[100vh]`}>
       <div className="w-[60%] mx-auto shadow-2xl overflow-hidden relative hidden lg:block">
         <img
           className="absolute inset-0 h-full w-full object-cover"
