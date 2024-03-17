@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
@@ -8,7 +8,8 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import { LuLogOut } from "react-icons/lu";
 import { Toaster, toast } from "sonner";
-import styles from './navbar.module.css'
+import styles from "./navbar.module.css";
+
 const Navbar = (props) => {
   const router = useRouter();
   const [icon, setIcon] = useState("bars");
@@ -54,128 +55,68 @@ const Navbar = (props) => {
         setIcon("bars"))
       : (ul.classList.add("left-0"), ul.classList.remove("-left-[100%]"));
   };
-  const handleSidebar = (e) => {
-    // e.preventDefault();
-    // if (token) {
-    //   const sidebar = document.querySelector(".sidebar");
-    //   const sidebar_cover = document.querySelector(".sidebar-cover");
-    //   !selected
-    //     ? (setSelected(true),
-    //       sidebar.classList.remove("-right-[150%]"),
-    //       sidebar_cover.classList.remove("-left-[150%]"),
-    //       sidebar.classList.add("right-0"),
-    //       sidebar_cover.classList.add("left-0"))
-    //     : (setSelected(false),
-    //       sidebar.classList.add("-right-[150%]"),
-    //       sidebar_cover.classList.add("-left-[150%]"),
-    //       sidebar_cover.classList.remove("left-0"),
-    //       sidebar.classList.remove("right-0"));
-    // } else {
-    //   toast.info("Login ...");
-    // }
-  };
 
- 
   return (
-    <>
-      <div
-        className={`sticky top-0 bg-white  z-[10]`}
-      >
-        <Toaster richColors position="top-right" duration={2000} />
-        <nav
-          className={`h-16 shadow-md lg:flex lg:flex-row lg:justify-between `}
+    <nav className={`sticky top-0 bg-white z-[10]`}>
+      {/* <Toaster richColors position="top-right" duration={2000} /> */}
+      <div className={`h-16 shadow-md flex flex-row justify-between `}>
+        <Link
+          href="/"
+          className="my-auto hover:cursor-pointer ml-4 relative h-12"
         >
-          <div className="float-right flex relative top-5 text-2xl lg:hidden">
-            <Link
-              href={"/login"}
-              className={`my-auto mx-2`}
-            >
-              <FaUserCircle />
-            </Link>
-            <span
-              onClick={handleLogout}
-              className={`my-auto mx-2`}
-            >
-              <LuLogOut />
-            </span>
-           
-            
-          </div>
-          <Link
-            href="/"
-            className="font-bold text-2xl my-auto hover:cursor-pointer ml-4 relative top-4 lg:top-0"
+          <img src="/logo.png" alt="" className="h-full" />
+        </Link>
+
+        <div className="my-auto">
+          <h1 >ClubHub</h1>
+        </div>
+
+        <div className="text-xl flex">
+          {/* {token && ( */}
+          <span
+            className="text-3xl my-auto h-fit cursor-pointer"
+            // onClick={toggleDropdown}
           >
-            ClubHub
-          </Link>
-         
-          
-          <div className="my-auto ml-24">
-            <ul className="flex flex-row lg:relative absolute text-xl space-x-10 font-semibold mx-4">
-              <li className={styles.navlink}>
-                <Link href="/shoes">About</Link>
-              </li>
-              <li className={styles.navlink}>
-                <Link href="/tshirts">Tshirts</Link>
-              </li>
-             
-            </ul>
-          </div>
-          <div className="text-xl lg:flex">
-            {/* {token && ( */}
-              <span
-                className="text-3xl my-auto h-fit cursor-pointer"
-                // onClick={toggleDropdown}
-              >
-                <RiArrowDropDownLine
-                  onMouseOver={() => {
-                    setDropdown(true);
-                  }}
-                />
-              </span>
-            {/* )} */}
-            {dropdown && ( //token
-              <div
-                onMouseOver={() => {
-                  setDropdown(true);
-                }}
-                onMouseLeave={() => {
-                  setDropdown(false);
-                }}
-                className="absolute top-16 bg-white shadow-lg border py-2 w-40 right-2 rounded-lg my-1"
-              >
-                <ul className="text-sm font-semibold text-center">
-                  <li className="hover:bg-orange-200 cursor-pointer">
-                    <span className="px-1">
-                      <Link href="/myaccount">My account</Link>
-                    </span>
-                  </li>
-                  <li className="hover:bg-orange-200 cursor-pointer my-1">
-                    <span className="px-1">
-                      <Link href="/orders">Orders</Link>
-                    </span>
-                  </li>
-                  <li className="hover:bg-orange-200 cursor-pointer my-1">
-                    <span className="px-1">
-                      <button onClick={handleLogout} href="/orders">
-                        Logout
-                      </button>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            )}
-            <Link
-              href={"/login"}
-              className={`my-auto mx-2`}
+            <RiArrowDropDownLine
+              onMouseOver={() => {
+                setDropdown(true);
+              }}
+            />
+          </span>
+          {/* )} */}
+          {dropdown && ( //token
+            <div
+              onMouseOver={() => {
+                setDropdown(true);
+              }}
+              onMouseLeave={() => {
+                setDropdown(false);
+              }}
+              className="absolute top-16 bg-white shadow-lg border py-2 w-40 right-2 rounded-lg my-1"
             >
-              <FaUserCircle />
-            </Link>
-          </div>
-         
-          
-        </nav>
+              <ul className="text-sm font-semibold text-center">
+                <li className="hover:bg-orange-200 cursor-pointer">
+                  <span className="px-1">
+                    <Link href="/myaccount">My account</Link>
+                  </span>
+                </li>
+
+                <li className="hover:bg-orange-200 cursor-pointer my-1">
+                  <span className="px-1">
+                    <button onClick={handleLogout} href="/orders">
+                      Logout
+                    </button>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          )}
+          <Link href={"/login"} className={`my-auto mx-2`}>
+            <FaUserCircle />
+          </Link>
+        </div>
       </div>
-    </>
+    </nav>
   );
 };
 
