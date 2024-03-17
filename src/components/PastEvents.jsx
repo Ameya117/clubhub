@@ -8,7 +8,7 @@ const PastEvents = () => {
     router.push("/");
   };
   return (
-    <div className="mx-5 mb-8 mt-4 lg:mt-64">
+    <div className="mx-5 mb-8 mt-10">
       <div className="flex justify-between">
         <div className="text-3xl m-5 text-black font-semibold  z-50 ">
           Past Events
@@ -22,7 +22,7 @@ const PastEvents = () => {
         </div>
       </div>
 
-      <hr className="w-[95vw] mx-auto"/>
+      <hr className="w-[95vw] mx-auto" />
 
       <div className="flex flex-col gap-3 my-8">
         <div className="flex h-[20rem] border-2 rounded-xl     ">
@@ -72,7 +72,7 @@ const PastEvents = () => {
               quibusdam asperiores pariatur at aliquam, quod ipsum? Dicta earum
               nostrum ratione. Nesciunt libero, facilis animi ea corrupti
               dolore, quae earum aliquid deleniti, enim laudantium eligendi nam
-              nobis molestiae dolorum sit! 
+              nobis molestiae dolorum sit!
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ const PastEvents = () => {
               culpa ab facilis explicabo praesentium perspiciatis sint rerum
               tempore iusto. Molestias perspiciatis minima debitis laborum fugit
               ipsa iste dolorum quas, nihil cumque molestiae sequi assumenda
-              exercitationem fuga necessitatibus facere! 
+              exercitationem fuga necessitatibus facere!
             </div>
           </div>
         </div>
