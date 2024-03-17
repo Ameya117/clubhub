@@ -3,6 +3,9 @@ import React, {useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({name:"", email: "", password: "" });
@@ -61,6 +64,7 @@ const Signup = () => {
   };
 
   return (
+    <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_CLIENTID}`}>
     <div className="flex flex-row h-[100vh]">
       <div className="w-[65%] mx-auto shadow-2xl overflow-hidden relative hidden lg:block">
         <img
@@ -88,7 +92,7 @@ const Signup = () => {
       <div className="w-[45%] mx-auto  lg:ml-0 lg:w-[35%] h-[100vh] grid place-content-center">
         <form onSubmit={handleOnSubmit} method="POST" className="flex flex-col">
           <h1 className="text-orange-600 font-bold text-7xl text-center mb-24 block lg:hidden">
-            Elevate
+            ClubHub
           </h1>
 
           <h1 className="text-orange-600 font-bold text-5xl text-center mb-24">
@@ -135,10 +139,23 @@ const Signup = () => {
           >
             Signup
           </button>
+          <span className="mx-auto my-4">------------------OR--------------------</span>
+     
+            <GoogleLogin 
+              onSuccess={(credentialResponse) => {
+                const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
+                // console.log(credentialResponseDecoded)
+                
+              }}
+              onError={() => {
+                console.log("Login Failed");
+              }}
+              />
           <ToastContainer />
         </form>
       </div>
     </div>
+    </GoogleOAuthProvider>
   );
 };
 
