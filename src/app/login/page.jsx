@@ -143,7 +143,7 @@ const Login = () => {
               Login
             </button>
 
-            <span className="mx-auto my-4">------------------OR--------------------</span>
+            <span className="mx-auto my-4">-----------------OR-----------------</span>
      
             <GoogleLogin 
               onSuccess={(credentialResponse) => {
