@@ -98,42 +98,29 @@ const Navbar = (props) => {
             >
               <LuLogOut />
             </span>
-            <input
-              type="checkbox"
-              id="check"
-              hidden
-              onClick={handleNavbar}
-              className="lg:hidden"
-            />
-            <label htmlFor="check" className="lg:hidden mx-4">
-              <span onClick={handleIcon} className="text-xl">
-                {" "}
-                {element}
-              </span>
-            </label>
+           
+            
           </div>
           <Link
             href="/"
             className="font-bold text-2xl my-auto hover:cursor-pointer ml-4 relative top-4 lg:top-0"
           >
-            Elevate
+            ClubHub
           </Link>
          
           
-          <div className="hidden lg:block my-auto ml-24">
+          <div className="my-auto ml-24">
             <ul className="flex flex-row lg:relative absolute text-xl space-x-10 font-semibold mx-4">
               <li className={styles.navlink}>
-                <Link href="/shoes">Shoes</Link>
+                <Link href="/shoes">About</Link>
               </li>
               <li className={styles.navlink}>
                 <Link href="/tshirts">Tshirts</Link>
               </li>
-              <li className={styles.navlink}>
-                <Link href="/hoodies">Hoodies</Link>
-              </li>
+             
             </ul>
           </div>
-          <div className="hidden text-xl lg:flex">
+          <div className="text-xl lg:flex">
             {/* {token && ( */}
               <span
                 className="text-3xl my-auto h-fit cursor-pointer"
