@@ -64,11 +64,11 @@ const Navbar = (props) => {
           href="/"
           className="my-auto hover:cursor-pointer ml-4 relative h-12"
         >
-          <img src="/logo.png" alt="" className="h-full" />
+          <img src="/Logo.png" alt="" className="h-full" />
         </Link>
 
         <div className="my-auto">
-          <h1 >ClubHub</h1>
+          <h1>ClubHub</h1>
         </div>
 
         <div className="text-xl flex">
