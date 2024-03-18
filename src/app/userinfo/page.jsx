@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar/Navbar";
 const Userinfo = () => {
   const [name, setName] = useState();
   const [regno, setRegno] = useState();
+  const [desc, setDesc] = useState();
 
   const handleOnSubmit = () => {
     //backend api route
@@ -18,7 +19,7 @@ const Userinfo = () => {
             Profile
           </h1>
           <form onSubmit={handleOnSubmit} className="grid place-content-center">
-          <label htmlFor="name" className="text-blue-400 mt-4">
+            <label htmlFor="name" className="text-blue-400 mt-4">
               Name
             </label>
             <input
@@ -48,7 +49,7 @@ const Userinfo = () => {
             />
             {regno}
 
-            <label htmlFor="name" className="text-blue-400 mt-4">
+            <label htmlFor="email" className="text-blue-400 mt-4">
               Email
             </label>
             <input
@@ -64,7 +65,24 @@ const Userinfo = () => {
               readOnly
             />
 
-            <button type="submit" className="bg-blue-500 hover:bg-blue-600  px-3 mt-4 mx-auto rounded-md text-white">Save</button>
+            <label htmlFor="desc" className="text-blue-400 mt-4">
+              Description
+            </label>
+
+            <textarea
+              name="desc"
+              id="desc"
+              cols="30"
+              rows="5"
+              className="border border-black rounded-md mb-4"
+            ></textarea>
+
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-600  px-3 mt-4 mx-auto rounded-md text-white"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
