@@ -24,7 +24,7 @@ const Clubs = () => {
       <div className="my-10">
         <h1 className="text-2xl mx-10 mt-10 mb-2 font-semibold">Upcoming Events</h1>
         <hr className="w-[95vw] mx-auto"/>
-        <Marquee pauseOnHover speed={150} className="mt-10">
+        <Marquee pauseOnHover speed={150} autoFill className="mt-10">
           <div className="flex flex-row">
             {imgs.map((item) => {
               return (
