@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { motion } from "framer-motion";
+import { Parallax } from "react-scroll-parallax";
 
 const ClubFlipCards = () => {
   const [isFlipped1, setIsFlipped1] = useState(false);
@@ -51,10 +52,14 @@ const ClubFlipCards = () => {
   return (
     <>
       <div className="flex flex-col items-center gap-3">
-        <div className="text-2xl tracking-[0.5rem] opacity-80 font-mono ">
-          explore
-        </div>
-        <div className="text-5xl tracking-[0.5rem] font-mono  ">Clubs</div>
+        <Parallax translateX={["-200px", "50px"]} easing="easeInQuad">
+          <span className="text-2xl tracking-[0.5rem] opacity-80 font-mono ">
+            explore
+          </span>
+        </Parallax>
+        <Parallax translateX={["200px", "-75px"]} easing="easeInQuad">
+          <div className="text-5xl tracking-[0.5rem] font-mono  ">Clubs</div>
+        </Parallax>
       </div>
 
       <div className="gap-y-[2rem] grid md:grid-cols-2 lg:grid-cols-3 mt-[2rem]">
@@ -226,7 +231,7 @@ const ClubFlipCards = () => {
 
         <motion.div
           variants={fadeInAnimationVariants}
-          initial="initial" 
+          initial="initial"
           whileInView="animate"
           viewport={{
             once: true,

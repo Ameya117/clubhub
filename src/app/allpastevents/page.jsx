@@ -1,10 +1,8 @@
 'use client'
 import React, { useEffect, useState } from "react";
+import Navbar from "@/components/Navbar/Navbar";
 
 const Archive = () => {
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   const data = [
     {
@@ -99,22 +97,24 @@ const Archive = () => {
 ]
 
   return (
+    <>
+    <Navbar />
     <div className="mx-5">
       <div className="text-3xl m-5 text-black font-semibold">
         Event Archives
       </div>
       <hr />
-      <div className="flex flex-wrap gap-3 justify-center h-screen">
-        {data.map((dataItem, index) => 
+      <div className="flex flex-wrap gap-x-6 gap-y-10 justify-center h-screen mt-10">
+        {data.map((dataItem) => 
           <div
-            className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
-            key={dataItem.id}          >
+          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+          key={dataItem.id}          >
             <div className="border-2 rounded-xl overflow-hidden h-full transition-transform duration-300 transform hover:scale-110">
               <img
                 className="w-full h-48 object-cover"
                 src={dataItem.imgSrc}
                 alt={dataItem.eventName}
-              />
+                />
               <div className="p-3 bg-white">
                 <div className="text-2xl font-semibold italic">
                   {dataItem.eventName}
@@ -128,6 +128,7 @@ const Archive = () => {
         )}
       </div>
     </div>
+        </>
   );
 };
 
