@@ -2,10 +2,11 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { FaCircleArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 const PastEvents = () => {
   const router = useRouter();
   const handleViewAll = () => {
-    router.push("/");
+    router.push("/allpastevents");
   };
   return (
     <div className="mx-5 mb-8 mt-10">
@@ -17,7 +18,7 @@ const PastEvents = () => {
           onClick={handleViewAll}
           className="text-3xl m-5 flex gap-2 hover:underline hover:cursor-pointer"
         >
-          <span className="text-2xl">View All</span>
+          <span href="/allpastevents" className="text-2xl">View All</span>
           <FaCircleArrowRight />
         </div>
       </div>
@@ -25,14 +26,14 @@ const PastEvents = () => {
       <hr className="w-[95vw] mx-auto" />
 
       <div className="flex flex-col gap-3 my-8">
-        <div className="flex h-[20rem] border-2 rounded-xl     ">
-          <div className="min-w-[25rem]">
+        <div className="flex h-[20rem] border-2 rounded-xl">
+          <div className="w-[90vw]">
             <img
               className="w-full h-full object-cover border-l-2 rounded-l-xl"
               src="/jcpl.jpg"
             />
           </div>
-          <div className="flex flex-col gap-1 p-3">
+          <div className="gap-1 p-3 hidden md:flex md:flex-col">
             <div className="text-2xl font-semibold italic">
               Juvenile Care Premiere League
             </div>
@@ -51,13 +52,13 @@ const PastEvents = () => {
           </div>
         </div>
         <div className="flex h-[20rem]  border-2 rounded-xl">
-          <div className="min-w-[25rem] ">
+          <div className="w-[90vw]">
             <img
               className="w-full h-full object-cover border-l-2 rounded-l-xl"
               src="/bolt.jpg"
             />
           </div>
-          <div className="flex flex-col gap-1 p-3">
+          <div className="gap-1 p-3 hidden md:flex md:flex-col">
             <div className="text-2xl font-semibold italic">Bolt 2.0</div>
             <div>IEEE</div>
             <div className="font-light text-slate-500">
@@ -77,14 +78,14 @@ const PastEvents = () => {
           </div>
         </div>
         <div className="flex h-[20rem]  border-2 rounded-xl ">
-          <div className="min-w-[25rem] ">
+          <div className="w-[90vw] md:w-[100%]">
             <img
               className="w-full h-full object-cover border-l-2 rounded-l-xl"
               src="/technica.jpg"
             />
           </div>
 
-          <div className="flex flex-col gap-1 p-3">
+          <div className="gap-1 p-3 hidden md:flex md:flex-col">
             <div className="text-2xl font-semibold italic">Technica</div>
             <div>ISTE</div>
             <div className="font-light text-slate-500">
