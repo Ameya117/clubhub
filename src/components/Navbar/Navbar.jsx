@@ -47,8 +47,8 @@ const Navbar = (props) => {
           <img src="/Logo.png" alt="logo" className="h-full" />
         </Link>
 
-        <div className="my-auto">
-          <h1 >ClubHub</h1>
+        <div className="my-auto cursor-pointer">
+          <h1 onClick={()=>{router.push('/')}}>ClubHub</h1>
         </div>
 
         <div className="text-xl flex">
