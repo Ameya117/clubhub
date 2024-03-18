@@ -70,7 +70,6 @@ const Login = () => {
     <Navbar />
     <LoginForm />
     
-    
     </>
     // <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_CLIENTID}`}>
     //   <div

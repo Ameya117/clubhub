@@ -75,13 +75,13 @@ const Navbar = (props) => {
               className="absolute top-16 bg-white shadow-lg border py-2 w-40 right-2 rounded-lg my-1"
             >
               <ul className="text-sm font-semibold text-center">
-                <li className="hover:bg-orange-200 cursor-pointer">
+                <li className="hover:bg-slate-100 cursor-pointer">
                   <span className="px-1">
-                    <Link href="/myaccount">My account</Link>
+                    <Link href="/userinfo">My account</Link>
                   </span>
                 </li>
 
-                <li className="hover:bg-orange-200 cursor-pointer my-1">
+                <li className="hover:bg-slate-100 cursor-pointer my-1">
                   <span className="px-1">
                     <button onClick={handleLogout} href="/orders">
                       Logout
